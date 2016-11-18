@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   Text,
-  View,
   Image,
   StyleSheet
 } from 'react-native';
@@ -10,8 +9,6 @@ import {
   Card,
   CardItem,
 } from 'native-base';
-
-
 
 export default class RobotItem extends Component {
   constructor(props) {
@@ -27,7 +24,7 @@ export default class RobotItem extends Component {
           <Text>{this.recordContent.title}</Text>
         </CardItem>
         <CardItem>
-          <Image style={{ resizeMode: 'cover' }} source={{uri: this.recordContent.image}} />
+          <Image style={{resizeMode: 'cover'}} source={{uri: this.recordContent.image}} />
         </CardItem>
         <CardItem>
           <Text>{this.recordContent.description}</Text>

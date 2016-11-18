@@ -1,7 +1,7 @@
 /**
  * Sample React Native App with Impagination.js
  *
- * https://github.com/robdel12/react-native
+ * https://github.com/robdel12/robotImpagination
  */
 
 import React, { Component } from 'react';
