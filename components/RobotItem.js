@@ -13,7 +13,7 @@ import {
 
 
 
-export default class Faker extends Component {
+export default class RobotItem extends Component {
   constructor(props) {
     super(props);
 
