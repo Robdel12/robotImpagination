@@ -24,7 +24,7 @@ import Dataset  from 'impagination';
 import RobotItem from './components/RobotItem';
 
 
-export default class reactnativeImpagination extends Component {
+export default class robotImpagination extends Component {
   constructor(props) {
     super(props);
 
@@ -123,4 +123,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('reactnativeImpagination', () => reactnativeImpagination);
+AppRegistry.registerComponent('robotImpagination', () => robotImpagination);

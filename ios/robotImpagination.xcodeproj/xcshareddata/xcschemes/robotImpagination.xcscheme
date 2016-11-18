@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "reactnativeImpagination.app"
-               BlueprintName = "reactnativeImpagination"
-               ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+               BuildableName = "robotImpagination.app"
+               BlueprintName = "robotImpagination"
+               ReferencedContainer = "container:robotImpagination.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "reactnativeImpaginationTests.xctest"
-               BlueprintName = "reactnativeImpaginationTests"
-               ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+               BuildableName = "robotImpaginationTests.xctest"
+               BlueprintName = "robotImpaginationTests"
+               ReferencedContainer = "container:robotImpagination.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "reactnativeImpaginationTests.xctest"
-               BlueprintName = "reactnativeImpaginationTests"
-               ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+               BuildableName = "robotImpaginationTests.xctest"
+               BlueprintName = "robotImpaginationTests"
+               ReferencedContainer = "container:robotImpagination.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactnativeImpagination.app"
-            BlueprintName = "reactnativeImpagination"
-            ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+            BuildableName = "robotImpagination.app"
+            BlueprintName = "robotImpagination"
+            ReferencedContainer = "container:robotImpagination.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactnativeImpagination.app"
-            BlueprintName = "reactnativeImpagination"
-            ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+            BuildableName = "robotImpagination.app"
+            BlueprintName = "robotImpagination"
+            ReferencedContainer = "container:robotImpagination.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactnativeImpagination.app"
-            BlueprintName = "reactnativeImpagination"
-            ReferencedContainer = "container:reactnativeImpagination.xcodeproj">
+            BuildableName = "robotImpagination.app"
+            BlueprintName = "robotImpagination"
+            ReferencedContainer = "container:robotImpagination.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

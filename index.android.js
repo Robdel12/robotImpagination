@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class reactnativeImpagination extends Component {
+export default class robotImpagination extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('reactnativeImpagination', () => reactnativeImpagination);
+AppRegistry.registerComponent('robotImpagination', () => robotImpagination);
