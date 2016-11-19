@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
 
 // Native base for nice prestyled components
 import {
   Button,
+  Header,
+  Container,
+  Title,
+  Content,
   Spinner,
 } from 'native-base';
 
@@ -16,11 +16,10 @@ import RobotItem from './RobotItem';
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    console.log('ay');
 
     this.state = {
       dataset: null,
-      store: null
+      store: null,
     };
   }
 
@@ -33,7 +32,7 @@ export default class Home extends Component {
   setupImpagination() {
     let _this = this;
 
-    this.dataset = new Dataset({
+    let dataset = new Dataset({
       pageSize: 15,
       loadHorizon: 15,
 
@@ -54,11 +53,9 @@ export default class Home extends Component {
       }
     });
 
-    this.setState({dataset: this.dataset});
+    this.setState({dataset: dataset});
 
-    // Set the readOffset to 0 to start reading from the dataset &
-    // loading data.
-    this.dataset.setReadOffset(0);
+    dataset.setReadOffset(0);
   }
 
   componentWillMount() {
@@ -73,8 +70,8 @@ export default class Home extends Component {
    */
   renderItem() {
     return this.state.store.map(record => {
-      if(record.isPending) {
-        return <Spinner style={styles.loadingSpinner} color="#00C497" key={Math.random()}/>;
+      if(record.isPending && !record.isSettled) {
+        return <Spinner color="#00C497" key={Math.random()}/>;
       }
 
       return (
@@ -84,26 +81,30 @@ export default class Home extends Component {
   }
 
   /**
-   * Set impaginations readOffset higher to load more data.
+   * Based on scroll position determine which card is in the current
+   * viewport. From there you can set the impagination readOffset
+   * equal to the current visibile card.
    *
-   * @method loadMoreData
+   * @method setCurrentReadOffset
    */
-  loadMoreData() {
-    this.state.dataset.setReadOffset(this.state.store.readOffset + 15);
+  setCurrentReadOffset(event) {
+    let itemHeight = 402;
+    let currentOffset = Math.floor(event.nativeEvent.contentOffset.y);
+    let currentItemIndex = Math.ceil(currentOffset / itemHeight);
+
+    this.state.dataset.setReadOffset(currentItemIndex);
   }
 
   render() {
     return (
-      <View>
-        {this.renderItem()}
-        <Button block onPress={() => { this.loadMoreData(); }} style={styles.loadMoreBtn}> Load More </Button>
-      </View>
+      <Container>
+        <Header>
+          <Title>Impagination.js</Title>
+        </Header>
+        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset.bind(this)}>
+          {this.renderItem()}
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  loadMoreBtn: {
-    margin: 10
-  }
-});

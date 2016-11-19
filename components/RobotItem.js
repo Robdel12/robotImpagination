@@ -19,7 +19,7 @@ export default class RobotItem extends Component {
 
   render() {
     return (
-      <Card style={styles.cardContainer}>
+      <Card style={[styles.cardContainer, this.props.style]}>
         <CardItem>
           <Text>{this.recordContent.title}</Text>
         </CardItem>
