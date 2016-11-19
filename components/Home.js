@@ -101,7 +101,7 @@ export default class Home extends Component {
         <Header>
           <Title>Impagination.js</Title>
         </Header>
-        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset.bind(this)}>
+        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset.bind(this)} removeClippedSubviews={true}>
           {this.renderItem()}
         </Content>
       </Container>
