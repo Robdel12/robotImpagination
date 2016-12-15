@@ -2290,9 +2290,9 @@ immutable@~3.7.6:
   version "3.7.6"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
 
-impagination@1.0.0-alpha.1:
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/impagination/-/impagination-1.0.0-alpha.1.tgz#4a5b37d99056921eea81e42e4d2e433ea0122d2f"
+impagination@1.0.0-alpha.3:
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/impagination/-/impagination-1.0.0-alpha.3.tgz#48ac39e5ff5d71f5bfcfcb4d200e471af5f8fb04"
   dependencies:
     babel-runtime "^5.8.25"
     binary-search-tree "^0.2.6"

@@ -19,7 +19,7 @@ export default class Home extends Component {
 
     this.state = {
       dataset: null,
-      store: null,
+      datasetState: null,
     };
   }
 
@@ -36,29 +36,28 @@ export default class Home extends Component {
       pageSize: 15,
       loadHorizon: 15,
 
-      // Anytime there's a new store emitted, we want to set that on
+      // Anytime there's a new state emitted, we want to set that on
       // the componets local state.
-      observe(store) {
-        _this.setState({store});
+      observe(datasetState) {
+        _this.setState({datasetState});
       },
 
       // Where to fetch the data from.
       fetch(pageOffset, pageSize, stats) {
         return fetch(`https://serene-beach-38011.herokuapp.com/api/faker?page=${pageOffset + 1}&per_page=${pageSize}`)
           .then(response => response.json())
-          .then(data => data)
           .catch((error) => {
             console.error(error);
           });
       }
     });
 
-    this.setState({dataset: dataset});
-
     dataset.setReadOffset(0);
+    this.setState({dataset});
   }
 
   componentWillMount() {
+    console.log(this);
     this.setupImpagination();
   }
 
@@ -69,7 +68,7 @@ export default class Home extends Component {
    * @method renderItem
    */
   renderItem() {
-    return this.state.store.map(record => {
+    return this.state.datasetState.map(record => {
       if(record.isPending && !record.isSettled) {
         return <Spinner color="#00C497" key={Math.random()}/>;
       }
@@ -87,7 +86,7 @@ export default class Home extends Component {
    *
    * @method setCurrentReadOffset
    */
-  setCurrentReadOffset(event) {
+  setCurrentReadOffset = (event) => {
     let itemHeight = 402;
     let currentOffset = Math.floor(event.nativeEvent.contentOffset.y);
     let currentItemIndex = Math.ceil(currentOffset / itemHeight);
@@ -101,7 +100,7 @@ export default class Home extends Component {
         <Header>
           <Title>Impagination.js</Title>
         </Header>
-        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset.bind(this)}>
+        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset} removeClippedSubviews={true}>
           {this.renderItem()}
         </Content>
       </Container>
